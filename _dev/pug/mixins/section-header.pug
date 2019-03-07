@@ -1,0 +1,14 @@
+mixin sectionHeaderLight(header,paragraph)
+    .container
+        .row
+            .col-12
+                .block__header
+                    h2.block__title.block__title_light.horizontal-row.horizontal-row_dark=header
+                    p.block__description.block__description_light=paragraph
+mixin sectionHeaderDark(header,paragraph)
+    .container
+        .row
+            .col-12
+                .block__header
+                    h2.block__title.block__title_dark.horizontal-row.horizontal-row_light=header
+                    p.block__description.block__description_dark=paragraph

@@ -1,0 +1,67 @@
+@import './variables';
+
+//@mixin sub-block{
+//  content: '';
+//  display: block;
+//}
+
+@mixin transition($speed: $transition-speed){
+  transition: $speed ease-in-out;
+}
+
+@mixin text-shadow(){
+  text-shadow: 1px 1px 2px rgba(black, .5);
+}
+
+@mixin box-shadow(){
+  box-shadow: 0 $block-space $block-space*6 rgba(black, .33);
+}
+
+@mixin svg{
+  svg{
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@mixin svg-path-fill($color: black){
+  svg *{
+      fill: $color;
+  }
+}
+
+@mixin svg-path-transition($speed: $transition-speed){
+  svg *{
+    transition: $speed;
+  }
+}
+
+// Block content centered by vertical
+//@mixin block-v-center{
+//  display: flex;
+//  align-items: center;
+//}
+
+// Block content centered by vertical and horizontal
+//@mixin block-vh-center{
+//  @include block-v-center;
+//  justify-content: center;
+//}
+
+
+
+
+@mixin font-text-bold{
+  font-family: $font-text, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin font-text-regular{
+  font-family: $font-text, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

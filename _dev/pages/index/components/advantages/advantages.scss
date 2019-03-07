@@ -1,0 +1,107 @@
+@import '../../../../style/mixins';
+
+.advantages_list__advantage-wrapper {
+  margin-bottom: $block-space;
+}
+
+.advantages_list__advantage {
+  display: flex;
+
+  position: relative;
+  padding: $block-space $block-space;
+  width: 100%;
+  min-height: 100%;
+  background: url(./images/gradient.svg?inline-css) no-repeat center / 100% 100%;
+  text-align: center;
+  color: $basic-white;
+
+
+  @media (min-width: $breakpoint-sm) {
+    padding: $block-space*1.5 $block-space/2;
+    height: 172px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    padding: $block-space $block-space/2;
+    height: 172px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $block-space*3 $block-space $block-space;
+    height: 228px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: $block-space*3 $block-space $block-space;
+    height: 280px;
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    bottom: 3px;
+    right: 3px;
+    border: 1px solid darken($basic-white, 35%);
+  }
+  > div {
+    width: 100%;
+  }
+}
+
+.advantages_list__advantage-icon,
+.advantages_list__advantage-name {
+  margin-bottom: $block-space;
+
+  @media (min-width: $breakpoint-sm) {
+    margin-bottom: $block-space_quarter;
+  }
+  @media (min-width: $breakpoint-lg) {
+    margin-bottom: $block-space_half;
+  }
+  @media (min-width: $breakpoint-xl) {
+    margin-bottom: $block-space;
+  }
+
+}
+
+.advantages_list__advantage-icon {
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  @include svg();
+  @include svg-path-transition($transition-speed*3);
+  @media (min-width: $breakpoint-xl) {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.advantages_list__advantage-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $basic-white;
+  font-size: 12px;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 14px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 16px;
+  }
+}
+
+.advantages_list__advantage-description {
+
+  font-size: 14px;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 12px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 15px;
+  }
+}

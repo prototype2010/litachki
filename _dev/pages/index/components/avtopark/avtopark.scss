@@ -1,0 +1,48 @@
+@import '../../../../style/mixins';
+
+.avtopark__container {
+  width: 100%;
+  height: 60vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  // swiper things
+  & .swiper-slide {
+    position: relative;
+    max-width: 60%;
+    @media (max-width: $breakpoint-md - 1) {
+      max-width: 70%;
+    }
+  }
+
+  & .swiper-slide:before {
+    content: '';
+    position: absolute;
+    top: $block-space-half;
+    bottom: $block-space-half;
+    right: $block-space-half;
+    left: $block-space-half;
+    border: 1px solid $basic-white;
+    z-index: 1;
+  }
+}
+
+.avtopark__item {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.avtopark__item_1 {
+  background-image: url(./images/vito1.jpg?external);
+}
+.avtopark__item_2 {
+  background-image: url(./images/vito2.png?external);
+}
+.avtopark__item_3 {
+  background-image: url(./images/vito3.jpg?external);
+}
+.avtopark__item_4 {
+  background-image: url(./images/vito4.jpg?external);
+}

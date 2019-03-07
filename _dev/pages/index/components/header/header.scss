@@ -1,0 +1,239 @@
+@import '../../../../style/mixins';
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background: url(./images/header-bg.jpg?external) no-repeat fixed center / cover;
+  color: $basic-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header__logo {
+
+  position: relative;
+  background: url(./images/logo.png?external) no-repeat center / cover;
+  background-size: contain;
+  width: 200px;
+  height: 150px;
+  left: 125px;
+  top: 35px;
+
+  @media (max-width: $breakpoint-sm - 1) {
+    left: 25px;
+  }
+}
+
+.header__menu-button{
+  position: fixed;
+  width: $block-space*3;
+  height: $block-space*3;
+  top: $block-space*2;
+  right: $block-space*2;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  z-index: 12;
+  >div,
+  &:before,
+  &:after{
+    transition: $transition-speed;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: $basic-white;
+    left: 0;
+  }
+  >div{
+    top: 50%;
+    margin-top: -1px;
+  }
+  &:before,
+  &:after{
+    content: '';
+    display: block;
+  }
+  &:before{
+    top: 4px;
+  }
+  &:after{
+    bottom: 4px;
+  }
+  &:not(.header__menu-button_active):hover{
+    &:before {
+      transform: translateY(-4px);
+    }
+    &:after {
+      transform: translateY(4px);
+    }
+  }
+}
+
+.header__menu-button_black{
+
+  &:before,
+  &:after, div {
+    background: $basic-gray;
+  }
+}
+
+.header__menu-popup{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #0c1e24;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: $transition-speed*2;
+  z-index: 11;
+}
+
+.header__menu-popup_visible{
+  visibility: visible;
+  opacity: 1;
+}
+
+.header__menu-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 300px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__menu-item {
+  padding: 0  $block-space 0 $block-space;
+  transition: $transition-speed;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    width: 100%;
+    display: block;
+    height: 2px;
+    transform: translateX(-200%);
+    background: white;
+    transition: $transition-speed;
+  }
+
+  &:hover:after {
+    transform: translateX(0);
+  }
+}
+
+.header__menu-item-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.header__menu-button_active {
+  &:before {
+    transform: rotate(45deg) translate(14px, 14px);
+  }
+  >div {
+    opacity: 0;
+  }
+  &:after{
+    transform: rotate(-45deg) translate(12px, -13px);
+  }
+}
+
+.header__title,
+.header__description {
+  margin: 0 0 $block-space;
+}
+
+.header__title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 36px;
+  color: $basic-white;
+
+  @media (max-width: $breakpoint-sm - 1) {
+    font-size: 42px;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 52px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 58px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 68px;
+  }
+}
+
+.header__description {
+
+  font-size: 14px;
+  text-align: center;
+  color: rgba($basic-white,0.7);
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 18px;
+  }
+  @media (min-width: $breakpoint-md) {
+    font-size: 22px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size: 24px;
+  }
+}
+
+.header__contacts {
+
+  list-style: none;
+  display: flex;
+
+  margin: $block-space*4 0 -$block-space 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  li {
+    padding: 0;
+    margin: $block-space $block-space $block-space;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      margin-top:  0;
+    }
+
+  }
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.header__contact {
+  text-decoration: none;
+  color : $basic-white;
+  @include font-text-bold;
+  font-size: 24px;
+
+
+}

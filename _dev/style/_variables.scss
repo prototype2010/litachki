@@ -1,0 +1,40 @@
+// See grid library
+$block-space: 16px;
+$block-space_half: round($block-space/2);
+$block-space_quarter: round($block-space/4);
+$around-space-factor: 2;
+$breakpoint-xs: 320px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$fluid-container-restriction : 1440px;
+
+
+$font-size-sm: 10px;
+$font-size-md: 12px;
+$font-size-lg: 14px;
+$font-size: 16px;
+
+$line-height: 1.618;
+
+$basic-gray: #3e3e3e;
+$basic-yellow : #dbeb04;
+$basic-white: white;
+$dark-gray : #373737;
+
+$border-width: 2px;
+$svg-stroke-width: 2;
+
+$transition-speed: 0.25s;
+
+$input-height: 28px;
+
+$font-text: 'OpenSans';
+
+
+
+
+
+

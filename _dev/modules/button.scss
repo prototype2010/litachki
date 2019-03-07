@@ -1,0 +1,130 @@
+@import '../style/mixins';
+@import '../style/variables';
+@import '../style/fonts';
+
+.button{
+  display: inline-flex;
+  position: relative;
+  align-self: center;
+  text-transform: uppercase;
+  transition: $transition-speed;
+  outline: none;
+  border: none;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button_small {
+  padding: $block-space/2 $block-space;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.button_small-margin {
+  margin: $block-space;
+}
+
+.button_big {
+  padding: $block-space_quarter;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $block-space_half;
+    font-size: 14px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    padding: $block-space;
+    font-size: 18px;
+  }
+
+}
+
+.button_big-margin {
+  margin: $block-space*2;
+}
+
+.button_dark {
+  background: $basic-gray;
+  color: $basic-yellow;
+
+  &:hover {
+    background: $basic-yellow;
+    color: $basic-gray;
+  }
+
+  &:active {
+    transition: none;
+    background: lighten($basic-yellow, 15%);
+    transform: translateY(1px);
+  }
+}
+
+.button_light {
+  background: $basic-yellow;
+  color: $basic-gray;
+
+  &:hover {
+    background: $basic-gray ;
+    color: $basic-yellow;
+  }
+
+  &:active {
+    transition: none;
+    background: lighten($basic-gray, 15%);
+    transform: translateY(1px);
+  }
+}
+
+.button_border-light {
+  border: 3px solid $basic-yellow;
+}
+
+.button_border-dark {
+  border: 3px solid $basic-gray;
+}
+
+.button_big-sides-margins {
+
+  padding: $block-space_quarter $block-space_half;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: $block-space_half $block-space;
+
+  }
+   @media (min-width: $breakpoint-md) {
+    padding: $block-space $block-space;
+  }
+  @media (min-width: $breakpoint-lg) {
+    padding: $block-space $block-space*2;
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: $block-space $block-space*3;
+  }
+}
+
+.button_no-background {
+
+  color: $basic-yellow;
+  background: none;
+
+  &:hover {
+    background: $basic-gray;
+    color: $basic-yellow;
+  }
+
+  &:active {
+    transition: none;
+    background: lighten($basic-gray, 15%);
+    transform: translateY(1px);
+  }
+}

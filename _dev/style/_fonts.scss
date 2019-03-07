@@ -1,0 +1,20 @@
+$path: '../resources/fonts';
+
+@mixin get-font-face(
+  $font-family,
+  $font-name,
+  $font-weight,
+  $font-style
+){
+  $connect-type: 'external';
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$path}/#{$font-name}.woff2?#{$connect-type}') format('woff2'),
+    url('#{$path}/#{$font-name}.woff?#{$connect-type}') format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@include get-font-face(OpenSans, OpenSansRegular, 400, normal);
+@include get-font-face(OpenSans, OpenSansBold, 700, normal);

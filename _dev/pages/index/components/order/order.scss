@@ -1,0 +1,117 @@
+@import '../../../../style/mixins';
+
+.orders__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+
+}
+
+.orders__container-restriction {
+  max-width: $fluid-container-restriction;
+}
+
+.orders__stage-container {
+  margin-bottom: $block-space;
+}
+
+.orders__stage-number-container {
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 10px;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    background: $basic-gray;
+
+    @media (min-width: $breakpoint-sm) {
+      width: 15px;
+      left: 50%;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: 20px;
+      left: 50%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 25px;
+      left: 60%;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      width: 30px;
+      left: 50%;
+    }
+  }
+}
+
+.orders__stage-number {
+  width: 25px;
+  height: 25px;
+  padding: 3px;
+  font-weight: 100;
+  border: 1px solid;
+  @include font-text-regular();
+}
+
+.orders__stage-text-container {
+  padding: 10px;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.orders__stage-header {
+  @include font-text-bold;
+  font-size: 14px;
+  color: $basic-gray;
+  margin: 0;
+  padding: $block-space_quarter 0;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 17px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 20px;
+    padding: $block-space_half 0;
+  }
+}
+
+.orders__stage-details {
+  color: $basic-gray;
+  font-size: 10px;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 11px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 12px;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 13px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 14px;
+  }
+}

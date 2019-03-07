@@ -1,0 +1,39 @@
+include ../../../../pug/mixins/section-header
+
+section.block
+    +sectionHeaderLight('Что мы предлагаем','Мы заботимся о вашем удобстве в дороге. Наша компания уже много лет занимается перевозками пассажиров. Мы обладаем всем необходимым для оказания качественных услуг.')
+    .container
+        .row
+            h3.offerings__header.col-12 Заказывая пасажирскую перевозку у нас вы получаете:
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/wifi.svg
+                h4.offerings__offer-description Бесплатный WI-FI
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/cinema.svg
+                h4.offerings__offer-description Просмотр фильмов
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/climatization.svg
+                h4.offerings__offer-description Климат контроль
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/house.svg
+                h4.offerings__offer-description Помощь в расселении
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/seat.svg
+                h4.offerings__offer-description Комфортные сидения
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/safety-belt.svg
+                h4.offerings__offer-description Ремни безопасности
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/luggage.svg
+                h4.offerings__offer-description Отделение для багажа
+            .offerings__content-wrapper.col-md-3.col-6(data-aos="zoom-out")
+                .offerings__offer-icon
+                    include ./images/day-night.svg
+                h4.offerings__offer-description Вечерние и утренние поездки

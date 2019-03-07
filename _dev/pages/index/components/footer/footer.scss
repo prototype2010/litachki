@@ -1,0 +1,117 @@
+@import '../../../../style/mixins';
+
+.footer {
+  background: $dark-gray;
+}
+
+.footer__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: $block-space_half;
+  border-bottom: 2px solid darken($basic-white, 60%);
+
+  @media (min-width: $breakpoint-sm) {
+    padding: $block-space;
+  }
+  @media (min-width: $breakpoint-md) {
+    padding: $block-space * 2;
+  }
+}
+
+.footer__link, .footer__contact-link {
+  color: $basic-white;
+  text-decoration: none;
+  transition: $transition-speed*2;
+  cursor: pointer;
+  &:hover {
+    color: darken($basic-white, 50%);
+  }
+}
+
+.footer__link {
+  font-size: 12px;
+  @include font-text-bold;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: 18px;
+  }
+  @media (min-width: $breakpoint-md) {
+    font-size: 20px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    font-size: 22px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size: 26px;
+  }
+}
+
+.footer__contact-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  span {
+    display: inline-block;
+    @include font-text-regular;
+    font-size: 14px;
+    margin-left: $block-space_quarter;
+    @media (min-width: $breakpoint-sm) {
+      margin-left: $block-space_quarter;
+      font-size: 16px;
+    }
+    @media (min-width: $breakpoint-lg) {
+      font-size: 14px;
+      margin-left: $block-space_quarter;
+    }
+    @media (min-width: $breakpoint-xl) {
+      font-size: 16px;
+    }
+  }
+}
+
+.footer__contacts {
+  width: 100%;
+  max-width: $breakpoint-md;
+  padding: (($block-space*2)+$block-space_half) $block-space;
+  margin: 0 auto;
+  color: $basic-white;
+  @include font-text-regular;
+  list-style: none;
+  text-align: center;
+}
+
+.footer__contact-icon-wrapper {
+  width: 25px;
+  height: 25px;
+  border: 1px solid darken($basic-white, 50%);
+  padding: $block-space_quarter;
+  @include svg;
+  @include svg-path-transition($transition-speed/5);
+  @include svg-path-fill($basic-yellow);
+  cursor: pointer;
+  &:hover {
+    @include svg-path-fill(lighten($basic-yellow, 15%));
+  }
+  @media (min-width: $breakpoint-md) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.footer__contact {
+  margin: $block-space_half 0;
+  width: 100%;
+  display: inline-flex;
+  padding: 0 $block-space_half;
+  justify-content: center;
+  @media (min-width: $breakpoint-sm) {
+    width: unset;
+    justify-content: unset;
+  }
+}
+
+
+
+

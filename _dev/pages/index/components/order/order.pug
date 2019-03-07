@@ -1,0 +1,32 @@
+include ../../../../pug/mixins/section-header
+
+section.block
+    +sectionHeaderLight('Как заказать пассажирскую перевозку','Возможность бронирования по телефону либо другим каналам связи исключает необходимость стояния в очередях в кассах вокзала. Тем самым вы экономите своё время')
+    .container-fluid.orders__container-restriction
+        .col-xl-10.offset-xl-1.col-lg-10.offset-lg-1.col-md-10.offset-md-1.col-sm-12.col-12
+            .row.orders__container
+                .orders__stage-container.col-md-3.col-6(data-aos="zoom-in" data-aos-delay="100")
+                    .orders__stage-number-container
+                        span.orders__stage-number 01.
+                    .orders__stage-text-container
+                        h3.orders__stage-header Запрос
+                        span.orders__stage-details Вы отправляете нам запрос или звоните
+                .orders__stage-container.col-md-3.col-6(data-aos="zoom-in" data-aos-delay="200")
+                    .orders__stage-number-container
+                        span.orders__stage-number 02.
+                    .orders__stage-text-container
+                        h3.orders__stage-header Консультация
+                        span.orders__stage-details Наш менеджер подбирает для вас оптимальные варианты перевозки
+                .orders__stage-container.col-md-3.col-6(data-aos="zoom-in" data-aos-delay="300")
+                    .orders__stage-number-container
+                        span.orders__stage-number 03.
+                    .orders__stage-text-container
+                        h3.orders__stage-header Заявка
+                        span.orders__stage-details Оформляем заявку
+                .orders__stage-container.col-md-3.col-6(data-aos="zoom-in" data-aos-delay="400")
+                    .orders__stage-number-container
+                        span.orders__stage-number 04.
+                    .orders__stage-text-container
+                        h3.orders__stage-header Выполнение
+                        span.orders__stage-details Вы получаете пассажирскую перевозку высшего класса
+

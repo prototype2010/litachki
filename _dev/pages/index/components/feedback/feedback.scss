@@ -1,0 +1,130 @@
+@import '../../../../style/mixins';
+
+.feedback__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0 $block-space;
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+
+  }
+  .swiper-slide {
+    position: relative;
+  }
+}
+
+.feedback {
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 130px;
+
+  @media (min-width: $breakpoint-lg) {
+    height: 160px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    height: 220px;
+  }
+}
+.feedback__image-wrapper {
+  margin-right: $block-space_half;
+
+
+  @media (min-width: $breakpoint-md) {
+    margin-right: $block-space;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    margin-right: $block-space*1.5;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    margin-right: $block-space*2;
+  }
+}
+
+.feedback__image-container {
+
+  position: relative;
+  height: 120px;
+  width: 120px;
+
+  margin-bottom: $block-space;
+
+  @media (min-width: $breakpoint-lg) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    width: 200px;
+    height: 200px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    border: 1px solid $basic-gray;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+  }
+
+}
+
+.feedback__photo1{
+  background: url(./images/Selection_102.png?external) no-repeat center center / contain;
+}
+
+.feedback__text-wrapper {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+
+}
+
+.feedback__name {
+  color: black;
+  @include font-text-bold;
+  font-size: 16px;
+  margin-left: $block-space_quarter;
+  @media (min-width: $breakpoint-xl) {
+    font-size: 18px;
+  }
+
+
+}
+.feedback__rating{
+
+  font-size: 14px;
+  margin: $block-space_quarter 0 $block-space_half $block-space_quarter;
+  height: 15px;
+  width: 90px;
+
+  background: url(./images/star.svg?external) space;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 16px;
+    margin: $block-space_quarter 0 $block-space_half $block-space_quarter;
+    height: 15px;
+    width: 90px;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 18px;
+    margin: $block-space_half 0 $block-space $block-space_quarter;
+    height: 20px;
+    width: 120px;
+  }
+
+}
+.feedback__text{
+  @include font-text-regular;
+  font-size: 13px;
+}

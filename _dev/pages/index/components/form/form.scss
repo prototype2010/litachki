@@ -1,0 +1,121 @@
+@import '../../../../style/mixins';
+
+.application-form__container {
+
+  position: relative;
+  padding: $block-space*3 0;
+  border: 2px solid $basic-gray;
+  z-index: 1;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    z-index: 2;
+    background-color: $basic-white;
+  }
+
+  &:before {
+    background: red;
+    height: 110%;
+    width: 20%;
+    top: 0;
+    transform: translate(-50%, -2%);
+
+    @media (min-width: $breakpoint-md) {
+      transform: translate(-50%, -5%);
+    }
+    background: $basic-white;
+  }
+
+  &:after {
+    width: 50px;
+    height: 50px;
+    border :1px solid $basic-gray;
+    top: 0;
+    transform: translate(-50%, -26%);
+
+    @media (min-width: $breakpoint-md) {
+      transform: translate(-50%, -50%);
+    }
+    background: $basic-white url(./images/arrow.svg?external) no-repeat center/29px;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.application-form__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.application-form__legend {
+  margin-bottom: $block-space*3;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+}
+
+.application-form__inputs-container {
+
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  transition: $transition-speed;
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > *:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    font-size: 18px;
+  }
+}
+
+.application-form__input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid $basic-gray;
+
+  > label {
+    flex-shrink: 10;
+  }
+  > input {
+    flex-grow: 10;
+  }
+}
+
+.application-form__input-label {
+  padding-bottom: 3px;
+  font-size: 18px;
+}
+
+.application-form__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding-left: 20px;
+
+  @include font-text-bold;
+  font-size: 18px;
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: 20px;
+    max-width: 70%;
+  }
+}
