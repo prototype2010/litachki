@@ -4,12 +4,16 @@
   background: $dark-gray;
 }
 
+.footer__navigation-decoration {
+  border-bottom: 2px solid darken($basic-white, 60%);
+}
+
 .footer__navigation {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   padding: $block-space_half;
-  border-bottom: 2px solid darken($basic-white, 60%);
 
   @media (min-width: $breakpoint-sm) {
     padding: $block-space;
@@ -30,7 +34,7 @@
 }
 
 .footer__link {
-  font-size: 12px;
+  font-size: 16px;
   @include font-text-bold;
 
   @media (min-width: $breakpoint-sm) {

@@ -1,14 +1,23 @@
 // index page
 import _ from 'lodash';
 
+let button;
+let sectionsArray;
+
 function menuSwitcher() {
     const menuButton = document.querySelector('.header__menu-button');
     const navItems = document.querySelector('.header__menu-popup');
 
     if (menuButton && navItems) {
         menuButton.addEventListener('click', () => {
+
+            menuButton.classList.remove('header__menu-button_black');
             menuButton.classList.toggle('header__menu-button_active');
             navItems.classList.toggle('header__menu-popup_visible');
+
+            setTimeout(() => {
+                throttledButtonChecker(button, sectionsArray);
+            } , 300 )
         });
     }
 }
@@ -45,6 +54,7 @@ const throttledButtonChecker = _.throttle(function (button, sectionsArray) {
         button.classList.add(className);
     }
 
+
 }, 100);
 
 function mapSectionsByDistance(sectionsArray) {
@@ -68,16 +78,18 @@ function mapSectionsByDistance(sectionsArray) {
 
 function keenButtonVisible() {
 
-    const button = document.querySelector('.header__menu-button');
-    const sectionsArray = mapSectionsByDistance(document.querySelectorAll('header,section,footer'));
-
     document.addEventListener('scroll', () => {
         throttledButtonChecker(button, sectionsArray);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    button = document.querySelector('.header__menu-button');
+    sectionsArray = mapSectionsByDistance(document.querySelectorAll('header,section,footer'));
+
     menuSwitcher();
     keenButtonVisible();
+
 });
 

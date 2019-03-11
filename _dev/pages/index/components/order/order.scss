@@ -19,38 +19,6 @@
 .orders__stage-number-container {
   position: relative;
 
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 10px;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    background: $basic-gray;
-
-    @media (min-width: $breakpoint-sm) {
-      width: 15px;
-      left: 50%;
-    }
-
-    @media (min-width: $breakpoint-md) {
-      width: 20px;
-      left: 50%;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      width: 25px;
-      left: 60%;
-    }
-
-    @media (min-width: $breakpoint-xl) {
-      width: 30px;
-      left: 50%;
-    }
-  }
 }
 
 .orders__stage-number {

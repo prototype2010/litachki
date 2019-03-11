@@ -190,7 +190,7 @@ h6 {
 .block__description_hide-text {
   overflow: hidden;
   height: 110px;
-  margin-bottom: 0;
+  margin-bottom: $block-space*2;
   background: $basic-gray;
   &:before {
     content: '';

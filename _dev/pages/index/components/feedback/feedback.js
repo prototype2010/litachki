@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navigation: {
             nextEl: '.feedback__button-next',
-            // nextEl: '.swiper-button-next',
-            // prevEl: '.swiper-button-prev',
             prevEl: '.feedback__button-prev',
         },
         pagination: {

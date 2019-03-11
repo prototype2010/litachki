@@ -2,16 +2,27 @@ include ../../../../pug/mixins/section-header
 
 section.block
     +sectionHeaderLight('Быстро, Удобно, Надежно','Мы ценим ваш выбор, поэтому стараемся чтобы вы всегда оставались довольны нашей работой. Предлагаем вам пассажирские перевозки по лучшему соотношению цены/качество.')
-    .container
+    .container-fluid.application-form__container-fluid-restriction
         .row
-            .application-form__container.col-12
-                p.application-form__legend Оставьте заявку и мы ответим на все интересующие вас вопросы
-                form.application-form__content
-                    .application-form__inputs-container
-                        div.application-form__input-wrapper.col-xl-5.col-lg-5.col-md-6.col-sm-8.col-8
-                            label.application-form__input-label(for='applicationName')  Имя
-                            input.application-form__input(type=text, id='applicationName')
-                        div.application-form__input-wrapper.col-xl-5.col-lg-5.col-md-6.col-sm-8.col-8
-                            label.application-form__input-label(for='applicationPhone') Телефон
-                            input.application-form__input(type=text, id='applicationPhone')
-                    button.button.button_small.button_dark.button_small-margin Отправить
+            .col-12.application-form__container-decoration
+                .application-form__container
+                    p.application-form__legend Оставьте заявку и мы ответим на все интересующие вас вопросы
+                    label(for='country').application-form__country-selector Выберете страну
+                        .application-form__country-select-wrapper
+                            select(id='country')
+                                option(value='ru') Россия
+                                option(selected value='ua') Украина
+                                option(value='pl') Польша
+                                option(value='it') Италия
+                    form.application-form__content
+                        .application-form__inputs-container
+                            .application-form__input-wrapper
+                                label.application-form__input-label(for='name')
+                                    input.application-form__input(type=text, id='name' placeholder='Имя')
+                            .application-form__input-wrapper
+                                label.application-form__input-label(for='phone')
+                                    input.application-form__input(type=text, id='phone' placeholder='Телефон')
+                        .application-form__textarea-wrapper
+                            label(for='message')
+                                textarea.application-form__input(rows=4 cols=100 id='message' placeholder='Сообщение')
+                        button.button.button_small.button_dark.button_small-margin Отправить

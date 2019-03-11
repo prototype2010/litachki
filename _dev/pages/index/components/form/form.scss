@@ -1,18 +1,19 @@
 @import '../../../../style/mixins';
 
-.application-form__container {
+.application-form__container-fluid-restriction {
+  max-width: 1200px;
+}
+
+.application-form__container-decoration {
 
   position: relative;
-  padding: $block-space*3 0;
   border: 2px solid $basic-gray;
-  z-index: 1;
 
   &:before, &:after {
     content: "";
     position: absolute;
-
+    z-index: 1;
     left: 50%;
-    z-index: 2;
     background-color: $basic-white;
   }
 
@@ -32,7 +33,7 @@
   &:after {
     width: 50px;
     height: 50px;
-    border :1px solid $basic-gray;
+    border: 1px solid $basic-gray;
     top: 0;
     transform: translate(-50%, -26%);
 
@@ -41,6 +42,20 @@
     }
     background: $basic-white url(./images/arrow.svg?external) no-repeat center/29px;
   }
+
+}
+
+.application-form__container {
+
+  max-width: 800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  padding: $block-space*3 0;
+  z-index: 1;
+  margin: auto;
 
   & > * {
     position: relative;
@@ -52,6 +67,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 0 $block-space_quarter;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $block-space_half;
+  }
+  @media (min-width: $breakpoint-md) {
+    padding: 0 $block-space;
+  }
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $block-space*2;
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: 0 $block-space*3;
+  }
 }
 
 .application-form__legend {
@@ -62,12 +91,102 @@
 }
 
 .application-form__inputs-container {
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 
-  margin-bottom: 30px;
+  transition: $transition-speed;
+  width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.application-form__country-selector {
+
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  color: $basic-gray;
+
+  margin : 0 auto $block-space*2 auto;
+  @include font-text-bold;
+
+  font-size: 18px;
+  line-height: 18px;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  select {
+    position: relative;
+    padding: $block-space_quarter ($block-space * 2) $block-space_quarter $block-space_half;
+    background: $basic-white;
+    border: 2px solid $basic-gray;
+    outline: none;
+    margin-left: $block-space;
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    background: url(./images/arrow-top.svg?inline-css) no-repeat right $block-space_half center / $block-space;
+
+    &:active {
+      background-image: url(./images/arrow-bottom.svg?inline-css);
+    }
+  }
+}
+
+.application-form__input-wrapper {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid $basic-gray;
+  width: 100%;
+  margin-bottom: $block-space*2;
   transition: $transition-speed;
+
+  @media (min-width: $breakpoint-lg) {
+    width: 48%;
+  }
+}
+
+.application-form__textarea-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid $basic-gray;
+  width: 100%;
+  margin: auto;
+}
+
+.application-form__input-label {
+  padding-bottom: $block-space_quarter;
+  width: 100%;
+}
+
+.application-form__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding-left: $block-space;
+
+  @include font-text-bold;
+  font-size: 18px;
+  line-height: 18px;
 
   @media (max-width: $breakpoint-lg) {
     flex-direction: column;
@@ -80,42 +199,11 @@
   }
   @media (max-width: $breakpoint-md) {
     font-size: 24px;
+    line-height: 24px;
   }
-  @media (max-width: $breakpoint-sm) {
-    font-size: 18px;
-  }
-}
-
-.application-form__input-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid $basic-gray;
-
-  > label {
-    flex-shrink: 10;
-  }
-  > input {
-    flex-grow: 10;
-  }
-}
-
-.application-form__input-label {
-  padding-bottom: 3px;
-  font-size: 18px;
-}
-
-.application-form__input {
-  width: 100%;
-  outline: none;
-  border: none;
-  padding-left: 20px;
-
-  @include font-text-bold;
-  font-size: 18px;
 
   @media (max-width: $breakpoint-lg) {
     font-size: 20px;
-    max-width: 70%;
+    line-height: 20px;
   }
 }
