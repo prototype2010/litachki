@@ -6,8 +6,13 @@
 
 .application-form__container-decoration {
 
+  margin-top: 16px;
   position: relative;
   border: 2px solid $basic-gray;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: unset;
+  }
 
   &:before, &:after {
     content: "";
@@ -181,12 +186,12 @@
 .application-form__input {
   width: 100%;
   outline: none;
-  border: none;
   padding-left: $block-space;
-
-  @include font-text-bold;
+  border : 2px solid transparent;
+  transition: $transition-speed;
   font-size: 18px;
   line-height: 18px;
+  @include font-text-bold;
 
   @media (max-width: $breakpoint-lg) {
     flex-direction: column;

@@ -21,8 +21,8 @@ section.block
                                     input.application-form__input(type=text, id='name' placeholder='Имя')
                             .application-form__input-wrapper
                                 label.application-form__input-label(for='phone')
-                                    input.application-form__input(type=text, id='phone' placeholder='Телефон' required=true)
+                                    input.application-form__input(type=text, id='phone' placeholder='Телефон *' required=true)
                         .application-form__textarea-wrapper
                             label(for='message')
                                 textarea.application-form__input(rows=4 cols=100 id='message' placeholder='Сообщение')
-                        button.button.button_medium.button_dark.button_medium-sides-margins.button_medium-margin Отправить
+                        button.button.button_medium.button_dark.button_medium-sides-margins.button_medium-margin(id='submitFormButton') Отправить
