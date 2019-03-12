@@ -2,7 +2,7 @@
 @import '../style/variables';
 @import '../style/fonts';
 
-.button{
+.button {
   display: inline-flex;
   position: relative;
   align-self: center;
@@ -23,6 +23,7 @@
   letter-spacing: 0.5px;
   font-weight: bold;
 }
+
 .button_small-margin {
   margin: $block-space;
 }
@@ -46,10 +47,25 @@
     padding: $block-space;
     font-size: 18px;
   }
-
 }
 
-.button_big-margin {
+.button_medium {
+  padding: $block-space_half;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $block-space_half;
+    font-size: 14px;
+  }
+}
+
+.button_medium-margin {
+  margin: $block-space*2;
+}
+
+.button_big-margkin {
   margin: $block-space*2;
 }
 
@@ -74,7 +90,7 @@
   color: $basic-gray;
 
   &:hover {
-    background: $basic-gray ;
+    background: $basic-gray;
     color: $basic-yellow;
   }
 
@@ -93,15 +109,18 @@
   border: 3px solid $basic-gray;
 }
 
+.button_medium-sides-margins {
+  padding: $block-space ($block-space + $block-space_half);
+}
+
 .button_big-sides-margins {
 
   padding: $block-space_quarter $block-space_half;
 
   @media (min-width: $breakpoint-sm) {
     padding: $block-space_half $block-space;
-
   }
-   @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-md) {
     padding: $block-space $block-space;
   }
   @media (min-width: $breakpoint-lg) {

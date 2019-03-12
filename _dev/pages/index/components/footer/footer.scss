@@ -116,6 +116,27 @@
   }
 }
 
+.footer__logo-container {
+  padding: $block-space*2 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darken($basic-gray,8%);
+}
 
+.footer__logo-wrapper {
+  height: $block-space;
+  margin-bottom: $block-space_half;
 
+  img {
+    height: $block-space;
+  }
+}
 
+.footer__copyright {
+  margin-top: ($block-space + $block-space_half);
+  color: lighten($basic-gray, 30%);
+  text-align: center;
+  line-height: 1;
+}

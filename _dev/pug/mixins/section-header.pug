@@ -12,3 +12,10 @@ mixin sectionHeaderDark(header,paragraph)
                 .block__header
                     h2.block__title.block__title_dark.horizontal-row.horizontal-row_light=header
                     p.block__description.block__description_dark=paragraph
+mixin sectionHeaderNoBackground(header,paragraph)
+    .container
+        .row
+            .col-12
+                .block__header
+                    h2.block__title.block__title_no-bg.horizontal-row.horizontal-row_light=header
+                    p.block__description.block__description_no-bg=paragraph

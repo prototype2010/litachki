@@ -13,7 +13,6 @@
   @media (min-width : $breakpoint-xl) {
     height: 100vh;
   }
-
 }
 
 .header_logo-container {
@@ -35,25 +34,22 @@
 .header__logo {
 
   position: relative;
-  width: 200px;
-  height: 150px;
   left: 25px;
   top: 35px;
+  width: 100px;
   @include svg;
 
-
-
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $breakpoint-lg) {
     left: 50px;
   }
 
-  @media (min-width: $breakpoint-md) {
-    width: 250px;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    left: 125px;
-    width: 300px;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    height: 2px;
+    width: 100%;
+    background: $basic-white;
   }
 }
 

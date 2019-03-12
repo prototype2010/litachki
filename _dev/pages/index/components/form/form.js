@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switch (language) {
 
             case 'ua' : {
-                applyInputMask(new Inputmask("+38 (099) 999-99-99") );
+                applyInputMask(new Inputmask("+38 (099) 999-99-99"));
                 break;
             }
             case 'ru' : {
@@ -24,14 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 applyInputMask(new Inputmask("+3\\9 (999) 999-99-99"));
                 break;
             }
-
             case 'pl' : {
                 applyInputMask(new Inputmask("+48 (999) 999-99-99"));
                 break;
             }
-
         }
-
     }
 
     function applyInputMask(inputMask) {

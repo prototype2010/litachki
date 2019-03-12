@@ -31,6 +31,7 @@ import './components/cta/cta.scss';
 import './components/cta/cta';
 //details
 import './components/details/details';
+import './components/details/details.scss';
 //footer
 import './components/footer/footer.scss';
 import './components/footer/footer';

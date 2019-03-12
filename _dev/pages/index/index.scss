@@ -138,6 +138,10 @@ h6 {
   background-color: lighten($basic-gray, 0.1);
 }
 
+.block__title_no-bg {
+  color: $basic-white;
+}
+
 .block__description {
   font-size: 18px;
   line-height: 150%;
@@ -162,6 +166,11 @@ h6 {
 
 .block__description_dark {
   color: $basic-white;
+}
+
+.block__description_no-bg {
+  color: $basic-white;
+  background: none;
 }
 
 .block__content {
@@ -191,16 +200,9 @@ h6 {
   overflow: hidden;
   height: 110px;
   margin-bottom: $block-space*2;
-  background: $basic-gray;
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left:0;
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(0deg, #3e3e3e, rgba(255, 0, 0, 0));
-  }
+  background: linear-gradient(to top, rgba($basic-white, 0), $basic-white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .block__expand-button {

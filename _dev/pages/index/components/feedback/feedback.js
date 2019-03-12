@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.feedback__slider', {
 
         grabCursor: true,
-        slidesPerView: 4,
+        slidesPerView: 2,
         spaceBetween: 30,
         loop: true,
         initialSlide: 1,
@@ -26,23 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
         breakpoints: {
-            // 320: {
-            //     slidesPerView: 1,
-            //     spaceBetween: 5
-            // },
-            540: {
+            992: {
                 slidesPerView: 1,
                 spaceBetween: 30
-            },
-            992: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            1440: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-
+            }
         }
     });
 });
