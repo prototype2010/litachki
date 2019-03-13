@@ -93,6 +93,19 @@ function handleAutoSliding() {
     });
 }
 
+function handleCallMe() {
+
+    const callMeButton = document.getElementById('callMe');
+
+    callMeButton.addEventListener('click', e => {
+        e.preventDefault();
+        smoothscroll(document.getElementById('form'), 1000);
+        document.getElementById('phone').focus();
+    });
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     button = document.querySelector('.header__menu-button');
@@ -101,5 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuSwitcher();
     keenButtonVisible();
     handleAutoSliding();
+    handleCallMe();
 });
 

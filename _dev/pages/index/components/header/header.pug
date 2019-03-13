@@ -18,7 +18,7 @@ header(id='header').header
                                 a.header__menu-item-link(href='#') Новости
                             li.header__menu-item
                                 a.header__menu-item-link(href='#') Всякое
-    .container
+    .container.header__flex-container
         .row
             .col-xl-8.offset-xl-2.col-lg-10.offset-lg-1.col-12
                 h1.header__title Ежедневные поездки в москву
@@ -32,6 +32,7 @@ header(id='header').header
                 a(href='tel:+79151121010').header__contact +7 (915) 112-10-10
             li
                 a(href='tel:+79295015072').header__contact +7 (929) 501-50-72
+        button(id='callMe').button.button_medium.button_light.button_medium-sides-margins.button__call-me  Перезвоните мне
     a(href='#advantages' id='readMore').header__mouse-link
         .header__mouse-wrapper
             .header__mouse

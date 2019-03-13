@@ -65,7 +65,7 @@
   margin: $block-space*2;
 }
 
-.button_big-margkin {
+.button_big-margin {
   margin: $block-space*2;
 }
 
@@ -145,5 +145,24 @@
     transition: none;
     background: lighten($basic-gray, 15%);
     transform: translateY(1px);
+  }
+}
+
+.button__call-me {
+
+  margin: -$block-space 0 $block-space*2 0 ;
+
+
+  @media (min-width: $breakpoint-sm) {
+    margin: -$block-space 0 $block-space*2 0;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    margin: -$block-space*3 0 $block-space*2 0;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    margin: 0;
+
   }
 }
