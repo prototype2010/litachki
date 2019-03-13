@@ -13,6 +13,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: $block-space_half;
 
   @media (min-width: $breakpoint-sm) {
@@ -34,6 +35,7 @@
 }
 
 .footer__link {
+  margin: 10px;
   font-size: 16px;
   @include font-text-bold;
 
@@ -41,6 +43,7 @@
     font-size: 18px;
   }
   @media (min-width: $breakpoint-md) {
+    margin: unset;
     font-size: 20px;
   }
   @media (min-width: $breakpoint-lg) {

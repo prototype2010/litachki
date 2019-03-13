@@ -43,6 +43,7 @@ import arrow from '../../resources/images/arrow.svg?inline-js';
 // Aos settings
 document.addEventListener('DOMContentLoaded', () => {
 
+
     AOS.init({
         // Global settings:
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function

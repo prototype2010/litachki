@@ -1,5 +1,6 @@
 // index page
 import _ from 'lodash';
+import smoothscroll from 'smoothscroll';
 
 let button;
 let sectionsArray;
@@ -17,7 +18,7 @@ function menuSwitcher() {
 
             setTimeout(() => {
                 throttledButtonChecker(button, sectionsArray);
-            } , 300 )
+            }, 300)
         });
     }
 }
@@ -34,7 +35,7 @@ function findSectionByDistance(sectionsArray, range) {
     return sectionsArray.find(section => {
 
         const {top, bot} = section;
-        const {top : buttonTop, bot: buttonBot} = range;
+        const {top: buttonTop, bot: buttonBot} = range;
 
         return (top <= buttonTop && bot >= buttonTop);
     });
@@ -44,7 +45,7 @@ const throttledButtonChecker = _.throttle(function (button, sectionsArray) {
 
     const rect = button.getBoundingClientRect();
     const {top, height} = rect;
-    const range = {top : top + getYOffset(), bot : top  + height+ getYOffset(),} ;
+    const range = {top: top + getYOffset(), bot: top + height + getYOffset(),};
     const {section} = findSectionByDistance(sectionsArray, range);
     const className = 'header__menu-button_black';
 
@@ -77,9 +78,18 @@ function mapSectionsByDistance(sectionsArray) {
 }
 
 function keenButtonVisible() {
-
     document.addEventListener('scroll', () => {
         throttledButtonChecker(button, sectionsArray);
+    });
+}
+
+function handleAutoSliding() {
+
+    const mouseButton = document.getElementById('readMore');
+
+    mouseButton.addEventListener('click', e => {
+        e.preventDefault();
+        smoothscroll(document.getElementById('advantages'), 1000)
     });
 }
 
@@ -90,6 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuSwitcher();
     keenButtonVisible();
-
+    handleAutoSliding();
 });
 
