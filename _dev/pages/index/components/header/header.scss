@@ -293,7 +293,7 @@
   transition: $transition-speed*2;
 
   @media(min-width: $breakpoint-xl) {
-    bottom: 70px;
+    bottom: 30px;
   }
 
   &:hover .header__mouse {
