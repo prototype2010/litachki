@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ['name', 'phone', 'message'].forEach(id => formData.append(id, document.getElementById(id).value));
 
-        axios.post('/formEndpoint', formData)
+        axios.post('/api/tripRequest', formData)
 
             .then(serverResponse => {
                 //TODO check status
