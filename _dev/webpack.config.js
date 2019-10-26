@@ -1,6 +1,5 @@
 const
     webpack = require('webpack'),
-    webappWebpackPlugin = require('webapp-webpack-plugin'),
     miniCssExtractPlugin = require('mini-css-extract-plugin'),
     uglifyJsPlugin = require('uglifyjs-webpack-plugin'),
     cleanWebpackPlugin = require('clean-webpack-plugin'),
@@ -9,6 +8,8 @@ const
     assetsDirName = 'assets',
     bundleDirName = 'bundle',
     bundlePath = `../${assetsDirName}/${bundleDirName}`;
+    const AppManifestWebpackPlugin = require('app-manifest-webpack-plugin');
+
 
 
 function getEntryPath(modulePath, moduleName) {
@@ -117,26 +118,20 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new webappWebpackPlugin({
+        new AppManifestWebpackPlugin({
             logo: `./resources/images/favicon.svg`,
-            prefix: `../bundle/favicon`,
             inject: false,
-            favicons: {
-                appName: 'eValuator',
-                //appDescription: 'eValuator',
-                //developerName: 'Me',
-                //developerURL: null, // prevent retrieving from the nearest package.json
-                background: '#fff',
-                theme_color: '#282828',
-                icons: {
-                    coast: false,
-                    yandex: false
-                }
-            }
+            output: '/',
+            prefix: '/assets/bundle',
+            persistentCache: true,
+            config: {
+                path: '/',
+            },
+            statsFilename: '/assets/bundle/manifest.json',
         }),
         new cleanWebpackPlugin([bundleDirName],{
             root: path.resolve(__dirname, `../${assetsDirName}`),
-            verbose: true
+            verbose: true,
         }),
     ],
     optimization: {

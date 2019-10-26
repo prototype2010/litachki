@@ -157,7 +157,7 @@
   }
 
   @media (min-width: $breakpoint-md) {
-    margin: -$block-space*3 0 $block-space*2 0;
+    margin: 0 0 $block-space*3 0;
   }
 
   @media (min-width: $breakpoint-lg) {

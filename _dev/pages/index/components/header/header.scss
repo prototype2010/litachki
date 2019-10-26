@@ -293,7 +293,7 @@
   transition: $transition-speed*2;
 
   @media(min-width: $breakpoint-xl) {
-    bottom: 70px;
+    bottom: 30px;
   }
 
   &:hover .header__mouse {
@@ -375,4 +375,80 @@
   line-height: 1;
   text-align: center;
   font-weight: bold;
+}
+
+
+.header__contact-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  span {
+    display: inline-block;
+    @include font-text-regular;
+    font-size: 14px;
+    margin-left: $block-space_quarter;
+    @media (min-width: $breakpoint-sm) {
+      margin-left: $block-space_quarter;
+      font-size: 16px;
+    }
+    @media (min-width: $breakpoint-lg) {
+      font-size: 14px;
+      margin-left: $block-space_quarter;
+    }
+    @media (min-width: $breakpoint-xl) {
+      font-size: 16px;
+    }
+  }
+}
+
+.header__contacts {
+  width: 100%;
+  max-width: $breakpoint-md;
+  padding: (($block-space*2)+$block-space_half) $block-space;
+  margin: 0 auto;
+  color: $basic-white;
+  @include font-text-regular;
+  list-style: none;
+  text-align: center;
+}
+
+.header__contact-icon-wrapper {
+  width: 25px;
+  height: 25px;
+  border: 1px solid darken($basic-white, 50%);
+  padding: $block-space_quarter;
+  @include svg;
+  @include svg-path-transition($transition-speed/5);
+  @include svg-path-fill($basic-yellow);
+  cursor: pointer;
+  &:hover {
+    @include svg-path-fill(lighten($basic-yellow, 15%));
+  }
+  @media (min-width: $breakpoint-md) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.header__contact {
+  margin: $block-space_half 0;
+  width: 100%;
+  display: inline-flex;
+  padding: 0 $block-space_half;
+  justify-content: center;
+  @media (min-width: $breakpoint-sm) {
+    width: unset;
+    justify-content: unset;
+  }
+}
+
+.header__contact-link {
+  color: $basic-white;
+  text-decoration: none;
+  transition: $transition-speed*2;
+  cursor: pointer;
+  &:hover {
+    color: darken($basic-white, 50%);
+  }
 }
