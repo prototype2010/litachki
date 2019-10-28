@@ -1,14 +1,12 @@
 include ./favicon.pug
 
 mixin head(title)
-    doctype html
-    html(lang='en')
-        head
-            meta(charset='UTF-8')
-            meta(http-equiv='X-UA-Compatible', content='IE=edge')
-            meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-            title= title
-            meta(name='description', content='Lita4ki')
-            link(rel='stylesheet', href='assets/bundle/index.css', type='text/css', media='all')
-            script(src='assets/bundle/index.js')
-            +favicon
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+        title= title
+        meta(name='description', content='Lita4ki')
+        link(rel='stylesheet', href='assets/bundle/index.css', type='text/css', media='all')
+
+        +favicon
