@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         centeredSlides: true,
         slidesPerView: 'auto',
         loop: true,
-        initialSlide: 1,
+        initialSlide: 0,
         speed: 400,
         touchEventsTarget: 'container',
         longSwipes: true,
