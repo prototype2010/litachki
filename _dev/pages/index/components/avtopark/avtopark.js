@@ -32,14 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
         breakpoints: {
-            991: {
+            1199: {
                 slidesPerView: 'auto',
                 spaceBetween: 30
             },
-            1199: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            }
         }
     });
 });

@@ -30,19 +30,30 @@
 
 .avtopark__item {
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 100%;
+  @media (max-width: $breakpoint-xl - 1) {
+    background-size: 100% 75%;
+    background-repeat: no-repeat;
+  }
 }
 
 .avtopark__item_1 {
   background-image: url(./images/vito1.jpg?external);
 }
 .avtopark__item_2 {
-  background-image: url(./images/vito2.png?external);
+  background-image: url(./images/vito2.jpg?external);
 }
 .avtopark__item_3 {
   background-image: url(./images/vito3.jpg?external);
 }
 .avtopark__item_4 {
   background-image: url(./images/vito4.jpg?external);
+}
+.avtopark__item_5 {
+  background-image: url(./images/vito5.jpg?external);
+}
+.avtopark__item_6 {
+  background-image: url(./images/vito6.jpg?external);
 }
