@@ -61,8 +61,16 @@
   }
 }
 
+.feedback__no_photo {
+  background: url(./images/no-photo.png?external) no-repeat center center / contain;
+}
+
 .feedback__photo1 {
-  background: url(./images/Selection_102.png?external) no-repeat center center / contain;
+  background: url(./images/feedbackphoto1.png?external) no-repeat center center / contain;
+}
+
+.feedback__photo2 {
+  background: url(./images/feedbackphoto2.png?external) no-repeat center center / contain;
 }
 
 .feedback__text-wrapper {
