@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
     button = document.querySelector('.header__menu-button');
     sectionsArray = mapSectionsByDistance(document.querySelectorAll('header,section,footer'));
 
-    menuSwitcher();
-    keenButtonVisible();
+    // menuSwitcher();
+    // keenButtonVisible();
     handleAutoSliding();
     handleCallMe();
 });
