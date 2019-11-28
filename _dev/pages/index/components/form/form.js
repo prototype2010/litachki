@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initInputMaskByLanguage(phoneSelect.value);
     // form listeners
     const button = document.getElementById('submitFormButton');
-    const throttledSubmitHandler = _.throttle(listenToFormSubmit, 1000);
+    const throttledSubmitHandler = _.throttle(listenToFormSubmit, 2000);
 
     function listenToFormSubmit() {
         const inputValue = input.inputmask.unmaskedvalue();
