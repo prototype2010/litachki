@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function listenToFormSubmit() {
         const inputValue = input.inputmask.unmaskedvalue();
 
-        console.log(toastr);
         if (isNumberValid(inputValue)) {
             submitFormData();
         } else {
@@ -85,17 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function submitFormData() {
 
+        button.setAttribute('disabled','disabled');
+
         const formData = new FormData();
 
         ['name', 'phone', 'message'].forEach(id => formData.append(id, document.getElementById(id).value));
 
         axios.post('/api/tripRequest', formData)
-
-            .then(serverResponse => {
-                //TODO check status
-                generateToastrTemplate('success', 'Форма успешно отправлена');
-            })
+            .then(() => generateToastrTemplate('success', 'Заявка успешно отправлена ! В ближайшее время наши сотрудники свяжутся с вами'))
             .catch(error => generateToastrTemplate('error', `На сервере произошла ошибка ${JSON.stringify(error)}`))
+            .finally(() => button.removeAttribute('disabled'))
     }
 
     function generateToastrTemplate(method, message) {
