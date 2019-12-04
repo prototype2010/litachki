@@ -2,7 +2,6 @@
 
 .avtopark__container {
   width: 100%;
-  height: 60vh;
   padding-top: 50px;
   padding-bottom: 50px;
   position: relative;
@@ -10,10 +9,12 @@
   // swiper things
   & .swiper-slide {
     position: relative;
-    max-width: 60%;
-    @media (max-width: $breakpoint-md - 1) {
-      max-width: 70%;
+    max-width: 35%;
+
+    @media (max-width: $breakpoint-lg - 1) {
+      max-width: 75%;
     }
+
   }
 
   & .swiper-slide:before {
@@ -29,31 +30,7 @@
 }
 
 .avtopark__item {
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  @media (max-width: $breakpoint-xl - 1) {
-    background-size: 100% 75%;
-    background-repeat: no-repeat;
+  & img {
+    max-width: 100%;
   }
-}
-
-.avtopark__item_1 {
-  background-image: url(./images/vito1.jpg?external);
-}
-.avtopark__item_2 {
-  background-image: url(./images/vito2.jpg?external);
-}
-.avtopark__item_3 {
-  background-image: url(./images/vito3.jpg?external);
-}
-.avtopark__item_4 {
-  background-image: url(./images/vito4.jpg?external);
-}
-.avtopark__item_5 {
-  background-image: url(./images/vito5.jpg?external);
-}
-.avtopark__item_6 {
-  background-image: url(./images/vito6.jpg?external);
 }
